@@ -10,10 +10,9 @@ body {
   background: #0d0d0d;
   color: #eee;
   line-height: 1.8;
-  scroll-behavior: smooth;
 }
 
-/* 🔝 Menu */
+/* Menu */
 nav {
   display: flex;
   justify-content: space-between;
@@ -52,7 +51,7 @@ nav a.active {
   padding-bottom: 4px;
 }
 
-/* 🌟 Intro */
+/* Intro */
 .intro {
   text-align: center;
   padding: 6rem 2rem;
@@ -72,7 +71,7 @@ nav a.active {
 /* Seções */
 section {
   padding: 5rem 2rem;
-  max-width: 1000px;
+  max-width: 1100px; /* aumentei para caber 3 cards lado a lado */
   margin: auto;
 }
 
@@ -107,19 +106,23 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Projetos */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+/* Forçar cards lado a lado */
+ .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
 }
 
+
+/* Tamanho fixo e consistente dos cards */
 .card {
   background: #1a1a1a;
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
   border: 1px solid #2d2d2d;
+  width: 320px; /* garante que fiquem lado a lado */
   box-shadow: 0 4px 14px rgba(138, 43, 226, 0.25);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -127,11 +130,6 @@ h2 {
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
-}
-
-.card h3 {
-  color: #c77dff;
-  margin-bottom: 1rem;
 }
 
 /* Botões */
@@ -171,4 +169,15 @@ footer {
   font-size: 0.9rem;
   color: #bbb;
   border-top: 1px solid #2d2d2d;
+}
+
+#projetos-academicos .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#projetos-academicos .card {
+  width: 320px;
 }
